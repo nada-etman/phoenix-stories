@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Flame, Instagram, Facebook, Twitter, Youtube, Send } from 'lucide-react';
 
@@ -9,10 +8,10 @@ const FOOTER_LINKS = {
 };
 
 const SOCIALS = [
-  { Icon: Instagram },
-  { Icon: Facebook },
-  { Icon: Twitter },
-  { Icon: Youtube },
+  { Icon: Instagram, href: '#' },  // ← غيري الرابط هنا
+  { Icon: Facebook, href: '#' },   // ← غيري الرابط هنا
+  { Icon: Twitter, href: '#' },    // ← غيري الرابط هنا
+  { Icon: Youtube, href: '#' },    // ← غيري الرابط هنا
 ];
 
 export default function Footer() {
@@ -57,10 +56,12 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-amber-400 text-sm mb-5 tracking-wide">STAY CONNECTED</h4>
             <div className="flex gap-3 mb-5">
-              {SOCIALS.map(({ Icon }, i) => (
+              {SOCIALS.map(({ Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-white/5 backdrop-blur-md border border-amber-500/20 flex items-center justify-center text-amber-300/50 hover:text-amber-400 hover:border-amber-500/40 transition-all duration-300"
                 >
                   <Icon className="w-4 h-4" />

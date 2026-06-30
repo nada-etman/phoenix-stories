@@ -1,12 +1,11 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Instagram, Facebook, Twitter } from 'lucide-react';
 
 const socialLinks = [
-  { Icon: Instagram, href: '#' },
-  { Icon: Facebook, href: '#' },
-  { Icon: Twitter, href: '#' }
+  { Icon: Instagram, href: 'https://www.facebook.com/?utm_source=chatgpt.com' },  // ← غيري الرابط هنا
+  { Icon: Facebook, href: 'https://www.instagram.com/?utm_source=chatgpt.com' },   // ← غيري الرابط هنا
+  { Icon: Twitter, href: 'https://x.com/?utm_source=chatgpt.com' },    // ← غيري الرابط هنا
 ];
 
 export default function HeroSection() {
@@ -19,6 +18,8 @@ export default function HeroSection() {
           <motion.a
             key={i}
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2 + i * 0.15, duration: 0.5 }}
@@ -93,6 +94,8 @@ export default function HeroSection() {
               <a
                 key={i}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]/70 hover:text-[#D4AF37] transition-colors"
               >
                 <Icon className="w-4 h-4" />

@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
@@ -139,13 +138,13 @@ export default function StoriesSection() {
         {/* ── Horizontal carousel ── */}
         <div className="relative">
 
-          {/* Arrow Left */}
+          {/* Arrow Left - SHOW ON MOBILE (flex instead of hidden md:flex) */}
           <button
             onClick={goPrev}
             disabled={offset === 0}
             className={`absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-20
               w-10 h-10 rounded-full bg-black/40 backdrop-blur-xl border
-              hidden md:flex items-center justify-center transition-all duration-300
+              flex items-center justify-center transition-all duration-300
               ${offset === 0
                 ? 'border-amber-500/10 text-amber-300/20 cursor-not-allowed'
                 : 'border-amber-500/30 text-amber-400 hover:border-amber-500/60 hover:bg-amber-500/10 cursor-pointer'
@@ -154,13 +153,13 @@ export default function StoriesSection() {
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          {/* Arrow Right */}
+          {/* Arrow Right - SHOW ON MOBILE (flex instead of hidden md:flex) */}
           <button
             onClick={goNext}
             disabled={offset >= maxOffset}
             className={`absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-20
               w-10 h-10 rounded-full bg-black/40 backdrop-blur-xl border
-              hidden md:flex items-center justify-center transition-all duration-300
+              flex items-center justify-center transition-all duration-300
               ${offset >= maxOffset
                 ? 'border-amber-500/10 text-amber-300/20 cursor-not-allowed'
                 : 'border-amber-500/30 text-amber-400 hover:border-amber-500/60 hover:bg-amber-500/10 cursor-pointer'

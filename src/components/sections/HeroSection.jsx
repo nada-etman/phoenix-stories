@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Instagram, Facebook } from 'lucide-react';
-import { FaXTwitter } from 'react-icons/fa6';
+import { ArrowRight, Instagram, Facebook,X } from 'lucide-react';
 
 const socialLinks = [
   { Icon: Instagram, href: 'https://www.instagram.com/?utm_source=chatgpt.com' },  // ← غيري الرابط هنا

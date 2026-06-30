@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Instagram, Facebook, Twitter } from 'lucide-react';
+import { ArrowRight, Instagram, Facebook, X } from 'lucide-react';
 
 const socialLinks = [
   { Icon: Instagram, href: 'https://www.facebook.com/?utm_source=chatgpt.com' },  // ← غيري الرابط هنا
   { Icon: Facebook, href: 'https://www.instagram.com/?utm_source=chatgpt.com' },   // ← غيري الرابط هنا
-  { Icon: Twitter, href: 'https://x.com/?utm_source=chatgpt.com' },    // ← غيري الرابط هنا
+  { Icon: X, href: 'https://x.com/?utm_source=chatgpt.com' },    // ← غيري الرابط هنا
 ];
 
 export default function HeroSection() {

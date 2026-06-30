@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Instagram, Facebook, Twitter, Youtube, Send } from 'lucide-react';
+import { Flame, Instagram, Facebook, X , Youtube, Send } from 'lucide-react';
 
 const FOOTER_LINKS = {
   Explore: ['Stories', 'Community', 'Challenges', 'Top Contributors'],
@@ -10,7 +10,7 @@ const FOOTER_LINKS = {
 const SOCIALS = [
   { Icon: Instagram, href: '#' },  // ← غيري الرابط هنا
   { Icon: Facebook, href: '#' },   // ← غيري الرابط هنا
-  { Icon: Twitter, href: '#' },    // ← غيري الرابط هنا
+  { Icon: X, href: '#' },    // ← غيري الرابط هنا
   { Icon: Youtube, href: '#' },    // ← غيري الرابط هنا
 ];
 

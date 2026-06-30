@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 45 80% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 45 20% 70%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 30% 20%;
+    --input: 45 30% 15%;
+    --ring: 45 100% 50%;
+    --radius: 0.75rem;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+
+    --gold: #D4AF37;
+    --gold-light: #F4D03F;
+    --gold-dark: #B8960C;
+    --void: #000000;
+    --glacial: #F9FAFB;
+    --stardust: #9CA3AF;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: black;
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #D4AF37, #F4D03F, #B8960C);
+  border-radius: 3px;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #D4AF37, #F4D03F, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient button */
+.gradient-btn {
+  background: linear-gradient(135deg, #D4AF37, #F4D03F, #B8960C);
+  position: relative;
+  z-index: 1;
+}
+.gradient-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #D4AF37, #F4D03F);
+  filter: blur(12px);
+  opacity: 0.3;
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+.gradient-btn:hover::before {
+  opacity: 0.6;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.glass-strong {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(244, 208, 63, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Ember animation */
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) translateX(50px) scale(0); opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* Hide scrollbar for horizontal scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Video optimization */
+video {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* =============================================
+   NEW ANIMATIONS - SMOKE & PARTICLES
+   ============================================= */
+
+/* Subtle Smoke Animation for Golden Card */
+@keyframes subtle-smoke {
+  0% { transform: translateY(20%) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-10%) scale(1.05); opacity: 0.5; }
+  100% { transform: translateY(-30%) scale(1.1); opacity: 0.1; }
+}
+
+/* Smoke Rising - Layer 1 (Slow) */
+@keyframes smoke-rise-1 {
+  0% { transform: translateY(100%) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-30%) scale(1.1); opacity: 0.4; }
+  100% { transform: translateY(-60%) scale(1.2); opacity: 0; }
+}
+
+/* Smoke Rising - Layer 2 (Medium) */
+@keyframes smoke-rise-2 {
+  0% { transform: translateY(100%) scale(0.9); opacity: 0.6; }
+  50% { transform: translateY(-40%) scale(1.05); opacity: 0.3; }
+  100% { transform: translateY(-70%) scale(1.15); opacity: 0; }
+}
+
+/* Smoke Rising - Layer 3 (Fast) */
+@keyframes smoke-rise-3 {
+  0% { transform: translateY(100%) scale(0.8); opacity: 0.5; }
+  50% { transform: translateY(-50%) scale(1); opacity: 0.2; }
+  100% { transform: translateY(-80%) scale(1.1); opacity: 0; }
+}
+
+/* Floating Golden Particles */
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  20% { opacity: 0.8; }
+  50% { transform: translateY(-100px) translateX(20px) scale(0.8); opacity: 0.4; }
+  100% { transform: translateY(-200px) translateX(-20px) scale(0); opacity: 0; }
+}
+
+/* Performance Optimization */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
